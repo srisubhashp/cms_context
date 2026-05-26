@@ -121,7 +121,7 @@ export default function Home() {
       {/* Footer */}
       <div className="border-t border-gray-300 mt-16 py-6 bg-white/70">
         <div className="container mx-auto px-4 sm:px-6 text-center text-sm text-gray-700">
-          Powered by AI • Built for Humana
+          Powered by Claude Code
         </div>
       </div>
     </main>
