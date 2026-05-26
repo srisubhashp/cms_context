@@ -13,19 +13,19 @@ export default function Home() {
   const [mode, setMode] = useState<Mode>('chat');
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#2C3E50] via-[#34495E] to-[#1A252F]">
+    <main className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-orange-600">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200 shadow-md">
+      <div className="bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-lg">
         <div className="container mx-auto px-4 sm:px-6 py-4">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-[#5EA908] rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-orange-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
               <div>
-                <h1 className="text-xl sm:text-2xl font-bold text-gray-900">
+                <h1 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-700 to-orange-600 bg-clip-text text-transparent">
                   CMS Provider Data Validator
                 </h1>
                 <p className="text-xs sm:text-sm text-gray-600">Humana Healthcare Data Intelligence</p>
@@ -36,30 +36,30 @@ export default function Home() {
             <div className="flex gap-2 flex-wrap justify-center">
               <button
                 onClick={() => setMode('bulk')}
-                className={`px-3 sm:px-4 py-2 rounded-lg font-semibold transition-colors text-sm ${
+                className={`px-3 sm:px-4 py-2 rounded-xl font-semibold transition-all duration-200 text-sm shadow-md hover:shadow-lg transform hover:-translate-y-0.5 ${
                   mode === 'bulk'
-                    ? 'bg-[#5EA908] text-white'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    ? 'bg-gradient-to-r from-purple-600 to-purple-700 text-white'
+                    : 'bg-white text-gray-700 hover:bg-gray-50'
                 }`}
               >
                 Bulk Upload
               </button>
               <button
                 onClick={() => setMode('upload')}
-                className={`px-3 sm:px-4 py-2 rounded-lg font-semibold transition-colors text-sm ${
+                className={`px-3 sm:px-4 py-2 rounded-xl font-semibold transition-all duration-200 text-sm shadow-md hover:shadow-lg transform hover:-translate-y-0.5 ${
                   mode === 'upload'
-                    ? 'bg-[#5EA908] text-white'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    ? 'bg-gradient-to-r from-purple-600 to-orange-500 text-white'
+                    : 'bg-white text-gray-700 hover:bg-gray-50'
                 }`}
               >
                 Upload & Validate
               </button>
               <button
                 onClick={() => setMode('chat')}
-                className={`px-3 sm:px-4 py-2 rounded-lg font-semibold transition-colors flex items-center gap-2 text-sm ${
+                className={`px-3 sm:px-4 py-2 rounded-xl font-semibold transition-all duration-200 flex items-center gap-2 text-sm shadow-md hover:shadow-lg transform hover:-translate-y-0.5 ${
                   mode === 'chat'
-                    ? 'bg-[#5EA908] text-white'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white'
+                    : 'bg-white text-gray-700 hover:bg-gray-50'
                 }`}
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -77,10 +77,10 @@ export default function Home() {
         {mode === 'bulk' && (
           <>
             <div className="text-center mb-8 sm:mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3 drop-shadow-lg">
                 Bulk Data Upload
               </h2>
-              <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg text-purple-100 max-w-2xl mx-auto drop-shadow">
                 Upload large CSV files efficiently. Data is saved to the database and marked for validation.
               </p>
             </div>
@@ -91,10 +91,10 @@ export default function Home() {
         {mode === 'upload' && (
           <>
             <div className="text-center mb-8 sm:mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3 drop-shadow-lg">
                 Upload & Validate
               </h2>
-              <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg text-purple-100 max-w-2xl mx-auto drop-shadow">
                 Upload CSV and validate the first 10 rows immediately
               </p>
             </div>
@@ -106,10 +106,10 @@ export default function Home() {
         {mode === 'chat' && (
           <>
             <div className="text-center mb-8 sm:mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3 drop-shadow-lg">
                 Provider Data Assistant
               </h2>
-              <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg text-purple-100 max-w-2xl mx-auto drop-shadow">
                 Ask questions about specific providers using natural language
               </p>
             </div>
@@ -119,8 +119,8 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <div className="border-t border-gray-700 mt-16 py-6 bg-[#1A252F]">
-        <div className="container mx-auto px-4 sm:px-6 text-center text-sm text-gray-400">
+      <div className="border-t border-purple-700/50 mt-16 py-6 bg-purple-900/50 backdrop-blur-sm">
+        <div className="container mx-auto px-4 sm:px-6 text-center text-sm text-purple-200">
           Powered by AI • Built for Humana
         </div>
       </div>
