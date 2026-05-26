@@ -1,0 +1,127 @@
+CREATE TABLE providers (
+  -- Auto-increment ID
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  
+  -- Provider Identity
+  Rndrng_NPI TEXT,
+  Rndrng_Prvdr_Last_Org_Name TEXT,
+  Rndrng_Prvdr_First_Name TEXT,
+  Rndrng_Prvdr_MI TEXT,
+  Rndrng_Prvdr_Crdntls TEXT,
+  Rndrng_Prvdr_Ent_Cd TEXT,
+  
+  -- Provider Address
+  Rndrng_Prvdr_St1 TEXT,
+  Rndrng_Prvdr_St2 TEXT,
+  Rndrng_Prvdr_City TEXT,
+  Rndrng_Prvdr_State_Abrvtn TEXT,
+  Rndrng_Prvdr_State_FIPS TEXT,
+  Rndrng_Prvdr_Zip5 TEXT,
+  Rndrng_Prvdr_RUCA TEXT,
+  Rndrng_Prvdr_RUCA_Desc TEXT,
+  Rndrng_Prvdr_Cntry TEXT,
+  
+  -- Provider Type & Status
+  Rndrng_Prvdr_Type TEXT,
+  Rndrng_Prvdr_Mdcr_Prtcptg_Ind TEXT,
+  
+  -- Service Totals
+  Tot_HCPCS_Cds TEXT,
+  Tot_Benes NUMERIC,
+  Tot_Srvcs NUMERIC,
+  Tot_Sbmtd_Chrg NUMERIC,
+  Tot_Mdcr_Alowd_Amt NUMERIC,
+  Tot_Mdcr_Pymt_Amt NUMERIC,
+  Tot_Mdcr_Stdzd_Amt NUMERIC,
+  
+  -- Drug Services
+  Drug_Sprsn_Ind TEXT,
+  Drug_Tot_HCPCS_Cds NUMERIC,
+  Drug_Tot_Benes NUMERIC,
+  Drug_Tot_Srvcs NUMERIC,
+  Drug_Sbmtd_Chrg NUMERIC,
+  Drug_Mdcr_Alowd_Amt NUMERIC,
+  Drug_Mdcr_Pymt_Amt NUMERIC,
+  Drug_Mdcr_Stdzd_Amt NUMERIC,
+  
+  -- Medical Services
+  Med_Sprsn_Ind TEXT,
+  Med_Tot_HCPCS_Cds NUMERIC,
+  Med_Tot_Benes NUMERIC,
+  Med_Tot_Srvcs NUMERIC,
+  Med_Sbmtd_Chrg NUMERIC,
+  Med_Mdcr_Alowd_Amt NUMERIC,
+  Med_Mdcr_Pymt_Amt NUMERIC,
+  Med_Mdcr_Stdzd_Amt NUMERIC,
+  
+  -- Beneficiary Demographics - Age
+  Bene_Avg_Age NUMERIC,
+  Bene_Age_LT_65_Cnt NUMERIC,
+  Bene_Age_65_74_Cnt NUMERIC,
+  Bene_Age_75_84_Cnt NUMERIC,
+  Bene_Age_GT_84_Cnt NUMERIC,
+  
+  -- Beneficiary Demographics - Gender
+  Bene_Feml_Cnt NUMERIC,
+  Bene_Male_Cnt NUMERIC,
+  
+  -- Beneficiary Demographics - Race
+  Bene_Race_Wht_Cnt NUMERIC,
+  Bene_Race_Black_Cnt NUMERIC,
+  Bene_Race_API_Cnt NUMERIC,
+  Bene_Race_Hspnc_Cnt NUMERIC,
+  Bene_Race_NatInd_Cnt NUMERIC,
+  Bene_Race_Othr_Cnt NUMERIC,
+  
+  -- Beneficiary Dual Eligibility
+  Bene_Dual_Cnt NUMERIC,
+  Bene_Ndual_Cnt NUMERIC,
+  
+  -- Chronic Conditions - Behavioral Health
+  Bene_CC_BH_ADHD_OthCD_V1_Pct NUMERIC,
+  Bene_CC_BH_Alcohol_Drug_V1_Pct NUMERIC,
+  Bene_CC_BH_Tobacco_V1_Pct NUMERIC,
+  Bene_CC_BH_Alz_NonAlzdem_V2_Pct NUMERIC,
+  Bene_CC_BH_Anxiety_V1_Pct NUMERIC,
+  Bene_CC_BH_Bipolar_V1_Pct NUMERIC,
+  Bene_CC_BH_Mood_V2_Pct NUMERIC,
+  Bene_CC_BH_Depress_V1_Pct NUMERIC,
+  Bene_CC_BH_PD_V1_Pct NUMERIC,
+  Bene_CC_BH_PTSD_V1_Pct NUMERIC,
+  Bene_CC_BH_Schizo_OthPsy_V1_Pct NUMERIC,
+  
+  -- Chronic Conditions - Physical Health
+  Bene_CC_PH_Asthma_V2_Pct NUMERIC,
+  Bene_CC_PH_Afib_V2_Pct NUMERIC,
+  Bene_CC_PH_Cancer6_V2_Pct NUMERIC,
+  Bene_CC_PH_CKD_V2_Pct NUMERIC,
+  Bene_CC_PH_COPD_V2_Pct NUMERIC,
+  Bene_CC_PH_Diabetes_V2_Pct NUMERIC,
+  Bene_CC_PH_HF_NonIHD_V2_Pct NUMERIC,
+  Bene_CC_PH_Hyperlipidemia_V2_Pct NUMERIC,
+  Bene_CC_PH_Hypertension_V2_Pct NUMERIC,
+  Bene_CC_PH_IschemicHeart_V2_Pct NUMERIC,
+  Bene_CC_PH_Osteoporosis_V2_Pct NUMERIC,
+  Bene_CC_PH_Parkinson_V2_Pct NUMERIC,
+  Bene_CC_PH_Arthritis_V2_Pct NUMERIC,
+  Bene_CC_PH_Stroke_TIA_V2_Pct NUMERIC,
+  
+  -- Risk Score
+  Bene_Avg_Risk_Scre NUMERIC,
+  
+  -- Our Validation Fields
+  validation_status TEXT,
+  validation_results TEXT,
+  
+  -- Timestamps
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Indexes for columns we actively query
+CREATE INDEX idx_providers_npi ON providers(Rndrng_NPI);
+CREATE INDEX idx_providers_last_name ON providers(Rndrng_Prvdr_Last_Org_Name);
+CREATE INDEX idx_providers_state ON providers(Rndrng_Prvdr_State_Abrvtn);
+CREATE INDEX idx_providers_zip ON providers(Rndrng_Prvdr_Zip5);
+CREATE INDEX idx_providers_type ON providers(Rndrng_Prvdr_Type);
+CREATE INDEX idx_providers_validation_status ON providers(validation_status);

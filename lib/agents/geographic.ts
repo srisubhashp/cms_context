@@ -4,72 +4,67 @@ const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
 });
 
-export interface GeographicValidationResult {
+interface ValidationData {
+  npi: string;
+  provider_name: string;
+  address: string;
+  city: string;
+  state: string;
+  zip: string;
+  phone: string;
+}
+
+interface GeographicValidationResult {
   isValid: boolean;
   confidence: number;
   findings: string[];
   details: string;
 }
 
-export interface ProviderData {
-  npi?: string;
-  provider_name?: string;
-  address?: string;
-  city?: string;
-  state?: string;
-  zip?: string;
-  phone?: string;
-  [key: string]: any;
-}
-
 export async function validateGeographic(
-  data: ProviderData
+  data: ValidationData
 ): Promise<GeographicValidationResult> {
-  const prompt = `You are a Geographic Validation Agent specializing in healthcare provider data validation.
-
-Your job is to check if geographic data is consistent and accurate.
+  const prompt = `You are a geographic data validator. Check if this provider's location data is consistent:
 
 Provider Data:
-- Address: ${data.address || 'N/A'}
-- City: ${data.city || 'N/A'}
-- State: ${data.state || 'N/A'}
-- ZIP Code: ${data.zip || 'N/A'}
-- Phone: ${data.phone || 'N/A'}
+- Address: ${data.address}
+- City: ${data.city}
+- State: ${data.state}
+- ZIP Code: ${data.zip}
 
-Validate the following:
-1. Does the ZIP code match the city and state?
-2. Does the phone area code match the geographic location?
-3. Is the address format valid for the state?
-4. Are there any obvious inconsistencies (e.g., CA ZIP with NY city)?
+Validate:
+1. Does the ZIP code match the city?
+2. Does the ZIP code match the state?
+3. Is the state abbreviation valid?
+4. Does the address format look reasonable?
 
-Respond in this exact JSON format:
+Respond ONLY with valid JSON in this exact format (no markdown, no code blocks):
 {
-  "isValid": true/false,
-  "confidence": 0-100,
-  "findings": ["list of specific issues found"],
-  "details": "Brief explanation of the validation"
-}
-
-If everything looks correct, set isValid to true and findings to an empty array.`;
+  "isValid": true,
+  "confidence": 95,
+  "findings": ["All data is consistent"],
+  "details": "explanation here"
+}`;
 
   try {
     const message = await anthropic.messages.create({
-      model: 'claude-sonnet-4-20250514',
+      model: 'claude-sonnet-4-5-20250929',
       max_tokens: 1000,
-      messages: [
-        {
-          role: 'user',
-          content: prompt,
-        },
-      ],
+      messages: [{ role: 'user', content: prompt }],
     });
 
-    // Extract the text response
-    const responseText =
-      message.content[0].type === 'text' ? message.content[0].text : '{}';
+    const content = message.content[0];
+    const responseText = content.type === 'text' ? content.text : '{}';
 
-    // Parse the JSON response
-    const result: GeographicValidationResult = JSON.parse(responseText);
+    // Strip markdown code blocks if present
+    let cleanedText = responseText.trim();
+    if (cleanedText.startsWith('```')) {
+      cleanedText = cleanedText.replace(/^```(?:json)?\s*\n?/, '');
+      cleanedText = cleanedText.replace(/\n?```\s*$/, '');
+      cleanedText = cleanedText.trim();
+    }
+
+    const result: GeographicValidationResult = JSON.parse(cleanedText);
 
     return result;
   } catch (error) {
@@ -78,7 +73,7 @@ If everything looks correct, set isValid to true and findings to an empty array.
       isValid: false,
       confidence: 0,
       findings: ['Error during validation'],
-      details: 'An error occurred while validating geographic data',
+      details: 'Validation service error',
     };
   }
 }

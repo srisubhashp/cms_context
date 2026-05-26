@@ -1,0 +1,403 @@
+[
+  {
+    "npi": "1497822381",
+    "provider_name": "Donald Chen",
+    "address": "9400 Rosecrans Ave",
+    "city": "Bellflower",
+    "state": "CA",
+    "zip": "90706",
+    "validation": {
+      "isValid": true,
+      "confidence": 95,
+      "findings": [
+        "ZIP code 90706 correctly matches Bellflower, CA",
+        "State abbreviation CA is valid",
+        "Address format is standard and reasonable",
+        "All components are geographically consistent"
+      ],
+      "details": "The address data is consistent. ZIP code 90706 is a valid ZIP code for Bellflower, California. The state abbreviation CA is correct. The address format with street number, street name, city, state, and ZIP follows standard USPS formatting. Rosecrans Ave is a known major street that runs through Bellflower in this ZIP code area."
+    },
+    "success": true
+  },
+  {
+    "npi": "1033559653",
+    "provider_name": "Anna Ethridge",
+    "address": "821 N Cobb St",
+    "city": "Milledgeville",
+    "state": "GA",
+    "zip": "31061",
+    "validation": {
+      "isValid": true,
+      "confidence": 95,
+      "findings": [
+        "ZIP code 31061 correctly matches Milledgeville, GA",
+        "State abbreviation GA is valid for Georgia",
+        "Address format is standard and reasonable",
+        "All geographic components are consistent"
+      ],
+      "details": "The address data is consistent. ZIP code 31061 is a valid ZIP code for Milledgeville, Georgia. The state abbreviation GA is correct. The address format follows standard US postal conventions with a street number, direction prefix, street name, and street type."
+    },
+    "success": true
+  },
+  {
+    "npi": "1245395029",
+    "provider_name": "Barbara Willis",
+    "address": "119 Forest Grove Rd",
+    "city": "Homer",
+    "state": "LA",
+    "zip": "71040",
+    "validation": {
+      "isValid": true,
+      "confidence": 95,
+      "findings": [
+        "ZIP code 71040 correctly matches Homer, LA",
+        "State abbreviation LA is valid for Louisiana",
+        "Address format is reasonable and properly structured",
+        "All geographic components are consistent"
+      ],
+      "details": "The ZIP code 71040 is correctly assigned to Homer, Louisiana. The state abbreviation LA is valid. The address format with street number, street name, and road type is standard and reasonable. All location data elements are consistent and valid."
+    },
+    "success": true
+  },
+  {
+    "npi": "1386268738",
+    "provider_name": "Elisabeth Plotner",
+    "address": "9909 Mira Mesa Blvd Ste 200",
+    "city": "San Diego",
+    "state": "CA",
+    "zip": "92131",
+    "validation": {
+      "isValid": true,
+      "confidence": 98,
+      "findings": [
+        "ZIP code 92131 correctly corresponds to San Diego, CA",
+        "State abbreviation CA is valid",
+        "ZIP code is in the Mira Mesa neighborhood of San Diego",
+        "Address format is properly structured with street number, street name, and suite number"
+      ],
+      "details": "All location data is consistent. ZIP code 92131 is a valid postal code for the Mira Mesa area of San Diego, California. The address on Mira Mesa Blvd aligns geographically with this ZIP code. The state abbreviation is correct and all formatting appears standard."
+    },
+    "success": true
+  },
+  {
+    "npi": "1497284160",
+    "provider_name": "Nina Jain",
+    "address": "75 Francis St",
+    "city": "Boston",
+    "state": "MA",
+    "zip": "02115",
+    "validation": {
+      "isValid": true,
+      "confidence": 98,
+      "findings": [
+        "ZIP code 02115 correctly corresponds to Boston, MA",
+        "State abbreviation MA is valid for Massachusetts",
+        "Address format is properly structured",
+        "This is the Longwood Medical Area of Boston"
+      ],
+      "details": "All location data is consistent and valid. ZIP code 02115 is a valid Boston, Massachusetts ZIP code serving the Longwood Medical Area. The address format follows standard conventions with street number, street name, city, state, and ZIP code all properly aligned."
+    },
+    "success": true
+  },
+  {
+    "npi": "1013064880",
+    "provider_name": "Dora Salazar",
+    "address": "3303 Northland Dr.",
+    "city": "Austin",
+    "state": "TX",
+    "zip": "78731",
+    "validation": {
+      "isValid": true,
+      "confidence": 95,
+      "findings": [
+        "ZIP code 78731 correctly matches Austin, TX",
+        "State abbreviation TX is valid",
+        "Address format is properly structured",
+        "78731 is a valid ZIP code in the Northwest Austin area near Allandale"
+      ],
+      "details": "All components of the address are consistent. ZIP code 78731 is a valid postal code for Austin, Texas, covering areas in northwest Austin including neighborhoods near Allandale and Brentwood. The state abbreviation TX is correct, and the address format follows standard US postal conventions with street number, street name, and directional indicator."
+    },
+    "success": true
+  },
+  {
+    "npi": "1578553053",
+    "provider_name": "Robert Killian",
+    "address": "901 Boren Ave",
+    "city": "Seattle",
+    "state": "WA",
+    "zip": "98104",
+    "validation": {
+      "isValid": true,
+      "confidence": 95,
+      "findings": [
+        "ZIP code 98104 is valid for Seattle, WA",
+        "State abbreviation WA is valid for Washington",
+        "Address format is standard and reasonable",
+        "98104 covers the downtown Seattle area where Boren Ave is located"
+      ],
+      "details": "All components of the address are consistent and valid. ZIP code 98104 is a valid Seattle, Washington ZIP code serving the downtown/First Hill area. Boren Ave is a real street in Seattle that runs through this ZIP code area. The state abbreviation WA is correct for Washington, and the address format follows standard US postal conventions."
+    },
+    "success": true
+  },
+  {
+    "npi": "1548462534",
+    "provider_name": "Michael Davio",
+    "address": "8700 Beverly Blvd",
+    "city": "West Hollywood",
+    "state": "CA",
+    "zip": "90048",
+    "validation": {
+      "isValid": false,
+      "confidence": 85,
+      "findings": [
+        "ZIP code 90048 belongs to Los Angeles, CA, not West Hollywood",
+        "West Hollywood is typically served by ZIP codes 90069, 90046, and 90048",
+        "The address 8700 Beverly Blvd does exist and spans the boundary between Los Angeles and West Hollywood",
+        "State abbreviation CA is valid",
+        "Address format is reasonable"
+      ],
+      "details": "ZIP code 90048 is primarily associated with Los Angeles, CA, though 8700 Beverly Boulevard is located in an area near the boundary of Los Angeles and West Hollywood. This specific address on Beverly Boulevard could legitimately be in either jurisdiction depending on the exact location. The discrepancy between West Hollywood and the ZIP code's primary city (Los Angeles) is a common occurrence in this area due to overlapping postal zones. The data shows minor inconsistency but may be functionally correct."
+    },
+    "success": true
+  },
+  {
+    "npi": "1659095735",
+    "provider_name": "Mayra Montijo",
+    "address": "1706 W Bonanza Rd",
+    "city": "Las Vegas",
+    "state": "NV",
+    "zip": "89106",
+    "validation": {
+      "isValid": true,
+      "confidence": 95,
+      "findings": [
+        "ZIP code 89106 is valid for Las Vegas, NV",
+        "State abbreviation NV is valid for Nevada",
+        "Address format is standard and reasonable",
+        "ZIP code 89106 covers the west-central Las Vegas area near Bonanza Rd"
+      ],
+      "details": "All components of the address are consistent. ZIP code 89106 is a valid Las Vegas, Nevada postal code that serves the area around W Bonanza Rd. The state abbreviation is correct, and the address follows standard US formatting conventions with a street number, directional prefix, street name, and road type."
+    },
+    "success": true
+  },
+  {
+    "npi": "1467920934",
+    "provider_name": "Maame Osei",
+    "address": "491 E Alessandro Blvd",
+    "city": "Riverside",
+    "state": "CA",
+    "zip": "92508",
+    "validation": {
+      "isValid": false,
+      "confidence": 85,
+      "findings": [
+        "ZIP code 92508 does not match Riverside city",
+        "ZIP code 92508 belongs to San Bernardino, CA",
+        "State abbreviation CA is valid",
+        "Address format appears reasonable"
+      ],
+      "details": "The ZIP code 92508 is assigned to San Bernardino, California, not Riverside, California. While both cities are in California and geographically close, this represents a city-ZIP mismatch. Riverside uses ZIP codes in the 92501-92509 range, but 92508 specifically corresponds to San Bernardino addresses. The state and address format are valid."
+    },
+    "success": true
+  },
+  {
+    "npi": "1568028371",
+    "provider_name": "Ashley Stites",
+    "address": "108 W Main St",
+    "city": "Tishomingo",
+    "state": "OK",
+    "zip": "73460",
+    "validation": {
+      "isValid": true,
+      "confidence": 95,
+      "findings": [
+        "ZIP code 73460 correctly matches Tishomingo, OK",
+        "State abbreviation OK is valid for Oklahoma",
+        "Address format is standard and reasonable",
+        "City, state, and ZIP code alignment is consistent"
+      ],
+      "details": "All validation checks passed. ZIP code 73460 is the correct ZIP code for Tishomingo, Oklahoma. The state abbreviation OK is valid. The address format follows standard US address conventions with street number, street name, and street type."
+    },
+    "success": true
+  },
+  {
+    "npi": "1366737884",
+    "provider_name": "Megan Bullard",
+    "address": "22266 Highway 25",
+    "city": "Columbiana",
+    "state": "AL",
+    "zip": "35051",
+    "validation": {
+      "isValid": true,
+      "confidence": 95,
+      "findings": [
+        "ZIP code 35051 correctly matches Columbiana, AL",
+        "State abbreviation AL is valid for Alabama",
+        "Address format is reasonable for a highway location",
+        "All geographic components are consistent"
+      ],
+      "details": "The ZIP code 35051 is correctly assigned to Columbiana, Alabama. The state abbreviation AL is valid. The address format with a highway number is appropriate for this rural/suburban area in Shelby County, Alabama. All location data elements are consistent and valid."
+    },
+    "success": true
+  },
+  {
+    "npi": "1275523300",
+    "provider_name": "Jeanette Marchinke",
+    "address": "44 Circle St",
+    "city": "Franklin",
+    "state": "PA",
+    "zip": "16323",
+    "validation": {
+      "isValid": true,
+      "confidence": 95,
+      "findings": [
+        "State abbreviation PA is valid for Pennsylvania",
+        "ZIP code 16323 corresponds to Franklin, PA",
+        "ZIP code 16323 is in Venango County, Pennsylvania",
+        "Address format is standard and reasonable"
+      ],
+      "details": "All components are consistent. ZIP code 16323 correctly matches Franklin, PA. The state abbreviation is valid, and the address format follows standard conventions."
+    },
+    "success": true
+  },
+  {
+    "npi": "1750666970",
+    "provider_name": "Keene Bryant",
+    "address": "11140 Montgomery Rd",
+    "city": "Cincinnati",
+    "state": "OH",
+    "zip": "45249",
+    "validation": {
+      "isValid": true,
+      "confidence": 95,
+      "findings": [
+        "ZIP code 45249 correctly matches Cincinnati, OH",
+        "State abbreviation OH is valid",
+        "Address format is properly structured",
+        "ZIP 45249 serves the Montgomery area of Cincinnati"
+      ],
+      "details": "All location data elements are consistent. ZIP code 45249 is a valid Cincinnati, Ohio ZIP code serving the Montgomery/Blue Ash area in the northeastern part of the city. Montgomery Road is a major thoroughfare in this area. The address format follows standard conventions with street number, street name, city, state, and ZIP code all properly formatted and geographically aligned."
+    },
+    "success": true
+  },
+  {
+    "npi": "1568183176",
+    "provider_name": "Kerri Mccullough",
+    "address": "616 Court Street",
+    "city": "Oberlin",
+    "state": "LA",
+    "zip": "70655",
+    "validation": {
+      "isValid": true,
+      "confidence": 95,
+      "findings": [
+        "ZIP code 70655 correctly matches Oberlin, LA",
+        "State abbreviation LA is valid for Louisiana",
+        "Address format is standard and reasonable",
+        "All geographic components are consistent"
+      ],
+      "details": "The address data is consistent. ZIP code 70655 is assigned to Oberlin, Louisiana. The state abbreviation LA is valid. The address format with street number, street name, city, state, and ZIP follows standard USPS conventions."
+    },
+    "success": true
+  },
+  {
+    "npi": "1326735671",
+    "provider_name": "Lauren Bierschenk",
+    "address": "80 Jesse Hill Jr Dr Se",
+    "city": "Atlanta",
+    "state": "GA",
+    "zip": "30303",
+    "validation": {
+      "isValid": true,
+      "confidence": 98,
+      "findings": [
+        "ZIP code 30303 correctly matches Atlanta, GA",
+        "State abbreviation GA is valid for Georgia",
+        "Address format is properly structured with street number, street name, and directional suffix",
+        "This address corresponds to the Grady Memorial Hospital area in downtown Atlanta"
+      ],
+      "details": "All components of the address are consistent and valid. ZIP code 30303 is a legitimate Atlanta, Georgia postal code serving the downtown area. The address format follows standard USPS conventions with street number (80), street name (Jesse Hill Jr Dr), and directional indicator (Se). Jesse Hill Jr Drive is a real street in Atlanta named after civil rights leader Jesse Hill Jr."
+    },
+    "success": true
+  },
+  {
+    "npi": "1952750424",
+    "provider_name": "Yasheka Roy",
+    "address": "3080 College St",
+    "city": "Beaumont",
+    "state": "TX",
+    "zip": "77701",
+    "validation": {
+      "isValid": true,
+      "confidence": 95,
+      "findings": [
+        "ZIP code 77701 correctly matches Beaumont, TX",
+        "State abbreviation TX is valid",
+        "Address format is properly structured",
+        "All geographic components are consistent"
+      ],
+      "details": "The address is valid. ZIP code 77701 is a legitimate ZIP code for Beaumont, Texas. The state abbreviation TX is correct. The address format with street number, street name, city, state, and ZIP follows standard USPS conventions. All components are geographically consistent."
+    },
+    "success": true
+  },
+  {
+    "npi": "1750655643",
+    "provider_name": "Ryan Baxter",
+    "address": "2906 S 20th St",
+    "city": "Milwaukee",
+    "state": "WI",
+    "zip": "53215",
+    "validation": {
+      "isValid": true,
+      "confidence": 95,
+      "findings": [
+        "ZIP code 53215 correctly matches Milwaukee, WI",
+        "State abbreviation WI is valid for Wisconsin",
+        "Address format is properly structured with house number, direction, street number and type",
+        "ZIP code 53215 serves the south side of Milwaukee"
+      ],
+      "details": "All location data components are consistent. ZIP code 53215 is a valid Milwaukee, Wisconsin postal code serving the south side area. The address format follows standard conventions with a house number (2906), cardinal direction (S), street number (20th), and street type (St). All fields align correctly with no discrepancies detected."
+    },
+    "success": true
+  },
+  {
+    "npi": "1548877400",
+    "provider_name": "Shawn Milhauser",
+    "address": "10435 Reed St Ste 100",
+    "city": "Westminster",
+    "state": "CO",
+    "zip": "80021",
+    "validation": {
+      "isValid": true,
+      "confidence": 100,
+      "findings": [
+        "ZIP code 80021 correctly matches Westminster, CO",
+        "State abbreviation CO is valid for Colorado",
+        "Address format is properly structured with street number, name, suite, and directional indicators",
+        "All components are consistent with USPS standards"
+      ],
+      "details": "The address is fully valid. ZIP code 80021 is a legitimate ZIP code assigned to Westminster, Colorado. Westminster is a city in Adams and Jefferson Counties in Colorado. The state abbreviation CO is correct. The address format follows standard USPS conventions with street number (10435), street name (Reed St), and suite designation (Ste 100)."
+    },
+    "success": true
+  },
+  {
+    "npi": "1750319455",
+    "provider_name": "Mark Hagstrom",
+    "address": "3366 Oakdale Ave N",
+    "city": "Robbinsdale",
+    "state": "MN",
+    "zip": "55422",
+    "validation": {
+      "isValid": true,
+      "confidence": 95,
+      "findings": [
+        "ZIP code 55422 correctly matches Robbinsdale, MN",
+        "State abbreviation MN is valid for Minnesota",
+        "Address format follows standard US postal conventions",
+        "All components are internally consistent"
+      ],
+      "details": "The address data is valid and consistent. ZIP code 55422 is assigned to Robbinsdale, Minnesota. The state abbreviation MN is correct. The address format with street number, street name, directional (N), city, state, and ZIP follows proper US addressing standards."
+    },
+    "success": true
+  }
+]
