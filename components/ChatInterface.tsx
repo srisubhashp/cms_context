@@ -79,34 +79,32 @@ export default function ChatInterface() {
 
   return (
     <div className="max-w-6xl mx-auto">
-      <div className="bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl border border-purple-200/30 overflow-hidden">
-        {/* Header - Purple to Orange Gradient */}
-        <div className="bg-gradient-to-r from-purple-600 via-purple-500 to-orange-500 px-4 sm:px-6 py-4 shadow-lg">
+      <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+        {/* Header - Humana Green */}
+        <div className="bg-gradient-to-r from-[#5EA908] to-emerald-600 px-4 sm:px-6 py-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center flex-shrink-0">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-              </svg>
-            </div>
+            <svg className="w-6 h-6 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+            </svg>
             <div>
-              <h3 className="text-lg sm:text-xl font-bold text-white drop-shadow">Provider Data Assistant</h3>
-              <p className="text-xs sm:text-sm text-purple-100">Ask me about specific providers by NPI</p>
+              <h3 className="text-lg sm:text-xl font-semibold text-white">Provider Data Assistant</h3>
+              <p className="text-xs sm:text-sm text-green-50">Ask me about specific providers by NPI</p>
             </div>
           </div>
         </div>
 
-        {/* Messages */}
-        <div className="h-[500px] sm:h-[600px] overflow-y-auto p-4 sm:p-6 space-y-4 bg-gradient-to-br from-purple-50 to-orange-50">
+        {/* Messages - Slightly darker gradient background */}
+        <div className="h-[500px] sm:h-[600px] overflow-y-auto p-4 sm:p-6 space-y-4 bg-gradient-to-br from-purple-200 via-orange-100 to-purple-100">
           {messages.map((msg, idx) => (
             <div
               key={idx}
               className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
             >
               <div
-                className={`max-w-[85%] sm:max-w-[80%] rounded-2xl px-4 py-3 shadow-lg backdrop-blur-sm ${
+                className={`max-w-[85%] sm:max-w-[80%] rounded-lg px-4 py-3 ${
                   msg.role === 'user'
-                    ? 'bg-gradient-to-br from-purple-600 to-purple-700 text-white'
-                    : 'bg-white/90 border border-purple-200/30 text-gray-900'
+                    ? 'bg-[#5EA908] text-white shadow-md'
+                    : 'bg-white border border-gray-200 text-gray-900 shadow-sm'
                 }`}
               >
                 <p className="text-sm whitespace-pre-wrap break-words">{msg.content}</p>
@@ -126,42 +124,41 @@ export default function ChatInterface() {
 
           {isLoading && (
             <div className="flex justify-start">
-              <div className="bg-white/90 backdrop-blur-sm border border-purple-200/30 rounded-2xl px-4 py-3 flex items-center gap-2 shadow-lg">
-                <svg className="animate-spin h-4 w-4 text-purple-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <div className="bg-white border border-gray-200 rounded-lg px-4 py-3 flex items-center gap-2 shadow-sm">
+                <svg className="animate-spin h-4 w-4 text-[#5EA908]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
-                <span className="text-sm text-gray-700">Validating...</span>
+                <span className="text-sm text-gray-600">Validating...</span>
               </div>
             </div>
           )}
         </div>
 
-        {/* Input - Modern Style */}
-        <form onSubmit={handleSubmit} className="border-t border-purple-200/30 p-4 sm:p-4 bg-white/80 backdrop-blur-sm">
+        {/* Input - BRIGHT GREEN Send button matching banner */}
+        <form onSubmit={handleSubmit} className="border-t border-gray-200 p-4 sm:p-4 bg-white">
           <div className="flex gap-2">
             <input
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ask about a provider (e.g., 'Check NPI 1234567890')"
-              className="flex-1 px-4 py-3 border-2 border-purple-200 rounded-xl 
-                focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent 
-                text-sm text-black placeholder-gray-500 bg-white shadow-sm
-                transition-all duration-200"
+              className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-lg 
+                focus:outline-none focus:ring-2 focus:ring-[#5EA908] focus:border-transparent 
+                text-sm text-black placeholder-gray-500 bg-white"
               style={{ color: '#000000' }}
               disabled={isLoading}
             />
             <button
               type="submit"
               disabled={isLoading || !input.trim()}
-              className="px-4 sm:px-6 py-3 bg-gradient-to-r from-purple-600 to-orange-500 text-white rounded-xl 
-                hover:from-purple-700 hover:to-orange-600 disabled:from-gray-300 disabled:to-gray-400 
-                disabled:cursor-not-allowed transition-all duration-200 font-semibold text-sm 
-                shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:transform-none
-                flex-shrink-0"
+              className={`px-4 sm:px-6 py-3 rounded-lg font-semibold text-sm shadow-md flex-shrink-0 transition-colors ${
+                isLoading || !input.trim()
+                  ? 'bg-[#5EA908] opacity-40 cursor-not-allowed text-white'
+                  : 'bg-[#5EA908] text-white hover:bg-[#4E8807]'
+              }`}
             >
-              Send
+              {isLoading ? 'Sending...' : 'Send'}
             </button>
           </div>
         </form>
